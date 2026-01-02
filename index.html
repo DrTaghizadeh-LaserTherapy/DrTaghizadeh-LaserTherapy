@@ -420,6 +420,63 @@ nav a::after{
 }
 </style>  
 
+ <style> 
+/* ===============================
+   DNA BACKGROUND ANIMATION
+   =============================== */
+
+.dna-bg{
+  position:fixed;
+  inset:0;
+  z-index:-2;
+  pointer-events:none;
+  overflow:hidden;
+}
+
+.dna-strand{
+  position:absolute;
+  width:2px;
+  height:160vh;
+  background:linear-gradient(
+    to bottom,
+    transparent,
+    rgba(90,45,130,.18),
+    transparent
+  );
+  animation:dnaMove 22s linear infinite;
+  opacity:.35;
+}
+
+.dna-strand::before,
+.dna-strand::after{
+  content:"";
+  position:absolute;
+  left:-6px;
+  width:14px;
+  height:14px;
+  border-radius:50%;
+  background:rgba(139,92,246,.35);
+  animation:dnaPulse 4s ease-in-out infinite;
+}
+
+.dna-strand::after{
+  left:auto;
+  right:-6px;
+  animation-delay:2s;
+}
+
+/* حرکت مارپیچی */
+@keyframes dnaMove{
+  0%{ transform:translateY(-30%) rotate(0deg); }
+  100%{ transform:translateY(30%) rotate(360deg); }
+}
+
+/* پالس زیستی */
+@keyframes dnaPulse{
+  0%,100%{ transform:scale(.6); opacity:.4; }
+  50%{ transform:scale(1); opacity:1; }
+}
+</style>  
   
 </head> 
 
