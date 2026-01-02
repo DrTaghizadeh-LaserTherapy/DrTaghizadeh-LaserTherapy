@@ -323,26 +323,34 @@ nav a::after{
 
  <style> 
  .card{
-  position:relative;
-  overflow:hidden;
-}
-
+/* ===== Subtle Wave Light Effect ===== */
 .card::before{
   content:"";
   position:absolute;
-  inset:-60%;
-  background:radial-gradient(circle at top,
-    rgba(255,255,255,0.45),
-    transparent 60%);
+  top:-120%;
+  left:-120%;
+  width:240%;
+  height:240%;
+  background:
+    linear-gradient(
+      120deg,
+      transparent 40%,
+      rgba(255,255,255,0.35) 50%,
+      transparent 60%
+    );
+  transform: rotate(0deg);
   opacity:0;
-  transform:translateY(30px);
-  transition:opacity .6s ease, transform .6s ease;
-  pointer-events:none;
+  transition: opacity .4s ease;
 }
 
 .card:hover::before{
   opacity:1;
-  transform:translateY(0);
+  animation: waveLight 1.8s ease forwards;
+}
+
+@keyframes waveLight{
+  0%   { transform: translateX(-40%) translateY(-40%) rotate(15deg); }
+  100% { transform: translateX(40%)  translateY(40%)  rotate(15deg); }
 }
 </style>  
 
