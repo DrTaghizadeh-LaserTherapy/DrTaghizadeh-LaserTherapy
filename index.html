@@ -355,6 +355,34 @@ nav a::after{
   transform:translateY(0);
 }
 </style>  
+
+<style>  
+/* ===== SVG Medical Animation ===== */
+.icon-med{
+  width:44px;
+  height:44px;
+  fill:#5A2D82;
+  margin-bottom:16px;
+  transition: transform .6s ease, opacity .6s ease;
+}
+
+/* Hover Animation */
+.card:hover .icon-med{
+  transform: scale(1.15) rotate(-3deg);
+  opacity:1;
+}
+
+/* Pulse Glow */
+@keyframes pulseGlow{
+  0%{filter:drop-shadow(0 0 0 rgba(90,45,130,0))}
+  50%{filter:drop-shadow(0 0 10px rgba(90,45,130,.35))}
+  100%{filter:drop-shadow(0 0 0 rgba(90,45,130,0))}
+}
+
+.card:hover .icon-med{
+  animation:pulseGlow 1.8s ease-in-out infinite;
+}
+</style>  
   
 </head> 
 
