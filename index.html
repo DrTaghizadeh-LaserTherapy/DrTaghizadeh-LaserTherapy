@@ -143,6 +143,84 @@ nav a{color:#5A2D82;font-weight:bold}
 .reveal{opacity:0;transform:translateY(40px);transition:1s}
 .reveal.active{opacity:1;transform:none}
 </style>
+
+/* ===== Premium Medical Look ===== */
+:root{
+  --primary:#5A2D82;
+  --glass:rgba(255,255,255,0.55);
+  --blur:blur(18px);
+}
+
+body{
+  background:
+    radial-gradient(circle at top right, #efe6fb, transparent 40%),
+    radial-gradient(circle at bottom left, #f6f1fb, transparent 40%),
+    #fafafa;
+}
+
+/* Glass Sections */
+section, .faq{
+  backdrop-filter: var(--blur);
+  -webkit-backdrop-filter: var(--blur);
+}
+
+/* Luxury Cards */
+#services > div > div{
+  background: var(--glass);
+  border-radius: 22px;
+  padding: 26px;
+  box-shadow:
+    0 15px 40px rgba(90,45,130,0.12),
+    inset 0 1px 0 rgba(255,255,255,0.6);
+  transition: all .45s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+#services > div > div::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,.4), transparent 70%);
+  opacity:0;
+  transition:.6s;
+}
+
+#services > div > div:hover::before{
+  opacity:1;
+  transform:translateX(100%);
+}
+
+#services > div > div:hover{
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 30px 70px rgba(90,45,130,0.25);
+}
+
+/* Buttons */
+a, .btn{
+  transition:.4s ease;
+}
+
+.btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 12px 30px rgba(0,0,0,.25);
+}
+
+/* Navigation Luxury */
+nav{
+  backdrop-filter: blur(12px);
+  background: rgba(255,255,255,0.75);
+  border-bottom:1px solid rgba(90,45,130,.1);
+}
+
+/* FAQ Animation */
+#faq p{
+  transition:.4s ease;
+}
+#faq p:hover{
+  transform:translateX(-6px);
+}  
+  
 </head>
 
 <body>
