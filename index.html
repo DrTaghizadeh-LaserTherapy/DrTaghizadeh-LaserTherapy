@@ -235,8 +235,49 @@ nav{
   pointer-events:none;
 }
 </style>  
-  
-</head>
+
+<style>
+/* ===== Scroll Reveal Pro (Customized for Your Site) ===== */
+.reveal{
+  opacity:0;
+  transform:translateY(70px) scale(.98);
+  transition:
+    opacity 1s ease,
+    transform 1s cubic-bezier(.19,1,.22,1);
+}
+
+.reveal.active{
+  opacity:1;
+  transform:translateY(0) scale(1);
+}
+
+/* ===== Stagger Effect for Cards ===== */
+.card.reveal{
+  transition-delay: .15s;
+}
+
+/* ===== Luxury Hover ===== */
+.card{
+  position:relative;
+  overflow:hidden;
+}
+
+.card::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at top, rgba(255,255,255,.35), transparent 60%);
+  opacity:0;
+  transition:.6s ease;
+  pointer-events:none;
+}
+
+.card:hover::after{
+  opacity:1;
+}
+</style>
+
+</head> 
 
 <body>
 
