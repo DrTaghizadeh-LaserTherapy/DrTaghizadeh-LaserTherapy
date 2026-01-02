@@ -383,6 +383,23 @@ nav a::after{
   animation:pulseGlow 1.8s ease-in-out infinite;
 }
 </style>  
+
+ <style> 
+ .reveal.active .icon-med{
+  animation:iconFloat .9s ease forwards;
+}
+
+@keyframes iconFloat{
+  from{
+    transform:translateY(12px) scale(.85);
+    opacity:0;
+  }
+  to{
+    transform:translateY(0) scale(1);
+    opacity:1;
+  }
+}
+</style>  
   
 </head> 
 
