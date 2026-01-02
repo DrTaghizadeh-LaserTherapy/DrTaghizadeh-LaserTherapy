@@ -295,6 +295,32 @@ nav a::after{
 }
 </style>
   
+<style>
+/* ===== Floating WhatsApp Button ===== */
+.whatsapp-float{
+  position:fixed;
+  bottom:24px;
+  left:24px;
+  width:60px;
+  height:60px;
+  background:#5A2D82;
+  color:#fff;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:28px;
+  box-shadow:0 15px 35px rgba(90,45,130,0.35);
+  z-index:9999;
+  transition:.4s ease;
+}
+
+.whatsapp-float:hover{
+  transform:translateY(-6px) scale(1.05);
+  box-shadow:0 25px 50px rgba(90,45,130,0.45);
+}  
+</style>
+  
 </head> 
 
 <body>
