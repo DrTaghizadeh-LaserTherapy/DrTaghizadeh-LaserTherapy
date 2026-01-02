@@ -371,22 +371,26 @@ nav a::after{
   transition: all .6s cubic-bezier(.19,1,.22,1);
 }
 
-/* ===============================
-   Subtle Pulse Animation
-   =============================== */
-
-@keyframes pulseSoft {
-  0%   { transform: scale(1);   opacity: .85; }
-  50%  { transform: scale(1.08); opacity: 1; }
-  100% { transform: scale(1);   opacity: .85; }
+/* ===== Regenerative Medical Animation ===== */
+@keyframes regenPulse{
+  0%{
+    stroke-dasharray: 0 200;
+    opacity:.6;
+  }
+  50%{
+    stroke-dasharray: 120 200;
+    opacity:1;
+  }
+  100%{
+    stroke-dasharray: 0 200;
+    opacity:.6;
+  }
 }
 
-/* ===============================
-   Scroll Reveal Activation
-   =============================== */
-
-.reveal.active .icon-med {
-  animation: pulseSoft 3.5s ease-in-out infinite;
+/* فعال شدن بعد از اسکرول */
+.reveal.active .icon-med{
+  stroke-dasharray: 200;
+  animation: regenPulse 4.5s ease-in-out infinite;
 }
 
 /* ===== Medical Gradient Shift (Hover) ===== */
