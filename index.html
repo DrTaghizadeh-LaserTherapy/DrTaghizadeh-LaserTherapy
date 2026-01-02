@@ -330,6 +330,31 @@ nav a::after{
   opacity:.9;
 }
 </style>  
+
+ <style> 
+ .card{
+  position:relative;
+  overflow:hidden;
+}
+
+.card::before{
+  content:"";
+  position:absolute;
+  inset:-60%;
+  background:radial-gradient(circle at top,
+    rgba(255,255,255,0.45),
+    transparent 60%);
+  opacity:0;
+  transform:translateY(30px);
+  transition:opacity .6s ease, transform .6s ease;
+  pointer-events:none;
+}
+
+.card:hover::before{
+  opacity:1;
+  transform:translateY(0);
+}
+</style>  
   
 </head> 
 
