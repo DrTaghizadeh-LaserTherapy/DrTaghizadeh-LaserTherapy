@@ -319,16 +319,6 @@ nav a::after{
   transform:translateY(-6px) scale(1.05);
   box-shadow:0 25px 50px rgba(90,45,130,0.45);
 }  
-</style>
-  
-<style>
-.icon-med{
-  width:42px;
-  height:42px;
-  fill:#5A2D82;
-  margin-bottom:14px;
-  opacity:.9;
-}
 </style>  
 
  <style> 
@@ -357,49 +347,70 @@ nav a::after{
 </style>  
 
 <style>  
-/* ===== SVG Medical Animation ===== */
-.icon-med{
-  width:44px;
-  height:44px;
-  fill:#5A2D82;
-  margin-bottom:16px;
-  transition: transform .6s ease, opacity .6s ease;
+/* ===============================
+   Medical Monochrome SVG Icons
+   =============================== */
+
+.icon-med {
+  width: 54px;
+  height: 54px;
+  margin-bottom: 18px;
+  stroke: #5A2D82;
+  stroke-width: 1.8;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: all .6s cubic-bezier(.19,1,.22,1);
 }
 
-/* Hover Animation */
-.card:hover .icon-med{
-  transform: scale(1.15) rotate(-3deg);
-  opacity:1;
+/* ===============================
+   Subtle Pulse Animation
+   =============================== */
+
+@keyframes pulseSoft {
+  0%   { transform: scale(1);   opacity: .85; }
+  50%  { transform: scale(1.08); opacity: 1; }
+  100% { transform: scale(1);   opacity: .85; }
 }
 
-/* Pulse Glow */
-@keyframes pulseGlow{
-  0%{filter:drop-shadow(0 0 0 rgba(90,45,130,0))}
-  50%{filter:drop-shadow(0 0 10px rgba(90,45,130,.35))}
-  100%{filter:drop-shadow(0 0 0 rgba(90,45,130,0))}
+/* ===============================
+   Scroll Reveal Activation
+   =============================== */
+
+.reveal.active .icon-med {
+  animation: pulseSoft 3.5s ease-in-out infinite;
 }
 
-.card:hover .icon-med{
-  animation:pulseGlow 1.8s ease-in-out infinite;
+/* ===============================
+   Hover Effect on Cards
+   =============================== */
+
+.card:hover .icon-med {
+  stroke: #7b3fe4;
+  transform: scale(1.18) rotate(-2deg);
+  filter: drop-shadow(0 10px 25px rgba(90,45,130,.35));
+}
+
+/* ===============================
+   Luxury Glow Effect
+   =============================== */
+
+.card:hover .icon-med {
+  animation-play-state: paused;
+}
+
+/* ===============================
+   Mobile Optimization
+   =============================== */
+
+@media (max-width: 768px) {
+  .icon-med {
+    width: 44px;
+    height: 44px;
+  }
 }
 </style>  
 
- <style> 
- .reveal.active .icon-med{
-  animation:iconFloat .9s ease forwards;
-}
-
-@keyframes iconFloat{
-  from{
-    transform:translateY(12px) scale(.85);
-    opacity:0;
-  }
-  to{
-    transform:translateY(0) scale(1);
-    opacity:1;
-  }
-}
-</style>  
   
 </head> 
 
